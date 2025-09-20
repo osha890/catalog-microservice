@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 
 class Product(Base, IdIntPkMixin):
-    name: Mapped[str] = mapped_column(String(50))
+    name: Mapped[str] = mapped_column(String(50), unique=True)
     description: Mapped[str | None] = mapped_column(Text)
     price: Mapped[Decimal] = mapped_column(Numeric(10, 2))
     category_id: Mapped[int] = mapped_column(
