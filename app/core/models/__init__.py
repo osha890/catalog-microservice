@@ -1,3 +1,7 @@
-__all__ = ("Base",)
+__all__ = (
+    "Base",
+    "Category",
+)
 
 from .base import Base
+from .category import Category
