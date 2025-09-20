@@ -24,3 +24,9 @@ class Product(Base, IdIntPkMixin):
         "Category",
         back_populates="products",
     )
+
+    def __str__(self):
+        return f"Product: {self.name}"
+
+    def __repr__(self):
+        return f"Product: {self.name}"
