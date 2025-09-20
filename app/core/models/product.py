@@ -14,13 +14,13 @@ if TYPE_CHECKING:
 
 class Product(Base, IdIntPkMixin):
     name: Mapped[str] = mapped_column(String(50))
-    description: Mapped[str] = mapped_column(Text)
+    description: Mapped[str | None] = mapped_column(Text)
     price: Mapped[Decimal] = mapped_column(Numeric(10, 2))
     category_id: Mapped[int] = mapped_column(
         ForeignKey("categories.id", ondelete="RESTRICT"),
     )
 
-    category: Mapped[Category] = relationship(
+    category: Mapped["Category"] = relationship(
         "Category",
         back_populates="products",
     )
