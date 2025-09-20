@@ -1,12 +1,11 @@
+from decimal import Decimal
 from typing import TYPE_CHECKING
 
-from sqlalchemy import String, Numeric, Text, ForeignKey
+from sqlalchemy import ForeignKey, Numeric, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from core.models import Base
 from core.models.mixins import IdIntPkMixin
-
-from decimal import Decimal
 
 if TYPE_CHECKING:
     from core.models import Category
