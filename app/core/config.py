@@ -37,6 +37,7 @@ class DatabaseConfig(BaseModel):
 
 class ApiPrefix(BaseModel):
     prefix: str = "/api"
+    categories: str = "/categories"
 
 
 class Settings(BaseSettings):
