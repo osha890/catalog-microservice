@@ -3,6 +3,7 @@ from typing import Annotated
 from fastapi import HTTPException
 from fastapi.params import Depends, Path
 from sqlalchemy.ext.asyncio import AsyncSession
+from starlette import status
 
 from api.category.crud import get_category
 from core.db_helper import db_helper
@@ -21,6 +22,6 @@ async def get_category_by_id(
         return category
 
     raise HTTPException(
-        status_code=404,
+        status_code=status.HTTP_404_NOT_FOUND,
         detail=f"Category with ID {category_id} not found",
     )
